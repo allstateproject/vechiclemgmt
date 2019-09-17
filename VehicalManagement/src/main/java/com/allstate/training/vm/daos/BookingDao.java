@@ -19,5 +19,6 @@ public interface BookingDao {
 	public List<Booking> getBookingBySource(String source);
 	public List<Booking> getBookingByDestination(String destination);
 	public List<Booking> getBookingBySourceAndDestination(String source,String destination);
+	public List<Booking> getBook();
 	
 }
