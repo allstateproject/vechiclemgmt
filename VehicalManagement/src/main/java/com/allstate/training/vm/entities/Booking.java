@@ -3,6 +3,7 @@ package com.allstate.training.vm.entities;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 import java.time.LocalDateTime;
@@ -14,7 +15,7 @@ public class Booking {
 	private int amountPaid;
 	private LocalDateTime timeStamp;
 	private String modeOfPayment;
-	@OneToOne(cascade=CascadeType.ALL)
+	@ManyToOne(cascade=CascadeType.ALL)
 	private Passenger passengers=new Passenger();
 	@OneToOne(cascade=CascadeType.ALL)
 	private Route route=new Route();
