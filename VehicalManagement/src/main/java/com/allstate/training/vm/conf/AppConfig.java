@@ -13,6 +13,15 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
+import com.allstate.training.vm.entities.Booking;
+import com.allstate.training.vm.entities.Buses;
+import com.allstate.training.vm.entities.Employee;
+import com.allstate.training.vm.entities.Passenger;
+import com.allstate.training.vm.entities.Route;
+import com.allstate.training.vm.entities.RouteDetails;
+import com.allstate.training.vm.entities.Schedule;
+import com.allstate.training.vm.entities.Users;
+
 //import com.allstate.training.vm.entities.Passenger;
 
 
@@ -55,7 +64,7 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 		sessionFactory.setDataSource(getDataSource());
 		Properties props=new Properties();
 		props.put(Environment.DIALECT, "org.hibernate.dialect.MySQLDialect");
-		props.put(Environment.HBM2DDL_AUTO, "create");
+		props.put(Environment.HBM2DDL_AUTO, "update");
 		props.put(Environment.SHOW_SQL, "true");
 		props.put(Environment.FORMAT_SQL, "true");
 	/*	props.put(Environment.USE_SECOND_LEVEL_CACHE, "true");
@@ -63,16 +72,16 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 				"org.hibernate.cache.ehcache.EhCacheRegionFactory");
 		*/
 		sessionFactory.setHibernateProperties(props);
-		sessionFactory.setPackagesToScan(new String[] {"com.allstate.training.vm.entites"});
-	//	sessionFactory.setAnnotatedClasses(Passenger.class);
-		/*sessionFactory.setAnnotatedClasses(Passenger.class);
+		sessionFactory.setPackagesToScan(new String[] {"com.allstate.training.vm.entities"});
+	  	sessionFactory.setAnnotatedClasses(Passenger.class);
+		
+		sessionFactory.setAnnotatedClasses(Buses.class);
+		sessionFactory.setAnnotatedClasses(Employee.class);
+		sessionFactory.setAnnotatedClasses(Booking.class);
 		sessionFactory.setAnnotatedClasses(Route.class);
+		sessionFactory.setAnnotatedClasses(RouteDetails.class);
+		sessionFactory.setAnnotatedClasses(Users.class);
 		sessionFactory.setAnnotatedClasses(Schedule.class);
-		sessionFactory.setAnnotatedClasses(Ship.class);
-		sessionFactory.setAnnotatedClasses(Ticket.class);
-		sessionFactory.setAnnotatedClasses(User.class);
-		sessionFactory.setAnnotatedClasses(Admin.class);
-*/
 		return sessionFactory;
 	}
 
