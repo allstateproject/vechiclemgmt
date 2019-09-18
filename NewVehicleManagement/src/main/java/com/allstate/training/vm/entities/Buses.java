@@ -13,6 +13,7 @@ public class Buses {
 	private String regNo;
 	private String dateOfPurchase;
 	private int seatingCapacity;
+	private int bookedSeats;
 	
 
 	public String getBusId() {
@@ -76,6 +77,14 @@ public class Buses {
 		return "Buses [busId=" + busId + ", modelNo=" + modelNo + ", busType=" + busType + ", policyNumber="
 				+ policyNumber + ", regNo=" + regNo + ", dateOfPurchase=" + dateOfPurchase + ", seatingCapacity="
 				+ seatingCapacity + "]";
+	}
+
+	public int getBookedSeats() {
+		return bookedSeats;
+	}
+
+	public void setBookedSeats(int bookedSeats) {
+		this.bookedSeats = bookedSeats;
 	}
 	
 
