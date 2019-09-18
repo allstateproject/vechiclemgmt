@@ -4,7 +4,10 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.PrimaryKeyJoinColumn;
 
+import org.hibernate.annotations.DynamicUpdate;
+
 @Entity
+@DynamicUpdate
 @PrimaryKeyJoinColumn(name="passengerId")
 public class Passenger extends Users{
 
