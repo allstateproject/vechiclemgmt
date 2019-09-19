@@ -52,6 +52,25 @@ public class ClerkController {
 		return mv;
 		
 	}
-	
+	@RequestMapping(value="/addBusDetails",method=RequestMethod.POST)
+	public void addbus(@RequestParam("busId")String busId,@RequestParam("modelNo")int modelNo,@RequestParam("busType")String busType,@RequestParam("policyNumber")String policyNumber,@RequestParam("regNo")String regNo,@RequestParam("dateOfPurchase")String dateOfPurchase,@RequestParam("seatingCapacity")int seatingCapacity,@RequestParam("bookedSeats")int bookedSeats){
+		Buses b=null;
+		b.setBusId(busId);
+		b.setModelNo(modelNo);
+		b.setBusType(busType);
+		b.setPolicyNumber(policyNumber);
+		b.setRegNo(regNo);
+		b.setDateOfPurchase(dateOfPurchase);
+		b.setSeatingCapacity(seatingCapacity);
+		b.setBookedSeats(bookedSeats);
+		try {
+			busesServices.addBus(b);
+		} catch (BuisnessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+	}
 
 }

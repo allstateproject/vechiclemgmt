@@ -19,7 +19,7 @@
 			<input type="submit" value="Add Route">
 		</div>
 	</form>
-	<form action="" method="POST">
+	<form action="addBusDetails" method="POST">
 		<div>
 			<h3>Add bus details</h3>
 			Bus Id:<br> <input type="text" id="busId" name="busId">
