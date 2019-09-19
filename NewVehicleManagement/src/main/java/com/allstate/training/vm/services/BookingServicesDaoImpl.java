@@ -3,12 +3,17 @@ package com.allstate.training.vm.services;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.allstate.training.vm.daos.BookingDaoImpl;
 import com.allstate.training.vm.entities.Booking;
 import com.allstate.training.vm.exceptions.BuisnessException;
 
+@Service
 public class BookingServicesDaoImpl implements BookingServicesDao{
 	
+	@Autowired
 	BookingDaoImpl bookingDaoImpl;
 	
 	public void addBooking(Booking boo) throws BuisnessException {
