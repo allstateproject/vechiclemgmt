@@ -13,6 +13,7 @@ public interface PassengerService {
 	public void updateEmgContact(String passengerId,String passengerEmgContact)throws BuisnessException;
 	public void updateAdharNum(String passengerId,String adharNum) throws BuisnessException;
 	public void deletePassenger(int passengerId)throws BuisnessException;
+	public void updatePassenger(Passenger passenger)throws BuisnessException;
 	public Passenger getPassengerById(String passengerId)throws BuisnessException;
 	public List<Passenger> getAll()throws BuisnessException;
 }

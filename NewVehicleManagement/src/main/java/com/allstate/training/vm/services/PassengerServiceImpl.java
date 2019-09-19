@@ -56,7 +56,7 @@ public class PassengerServiceImpl implements PassengerService {
 
 	}
 
-	public void deletePassenger(int passengerId)throws BuisnessException {
+	public void deletePassenger(String passengerId)throws BuisnessException {
 		passengerDao.deletePassenger(passengerId);
 	}
 
@@ -82,6 +82,11 @@ public class PassengerServiceImpl implements PassengerService {
 		}else {
 			throw new BuisnessException("Adhar number should be 12 digits");
 		}
+		
+	}
+
+	public void updatePassenger(String passengerId) throws BuisnessException {
+		
 		
 	}
 
