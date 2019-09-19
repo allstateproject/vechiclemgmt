@@ -26,15 +26,23 @@ public class ClerkController {
 	
 	@Autowired
 	BusesServices busesServices;
+	@RequestMapping(value="/busDetails")
+	public String getname() {
+		return "busDetails";
+	}
 	
 	@RequestMapping(value="/fetchdetails",method=RequestMethod.POST)
 	public ModelAndView getLogin(@RequestParam("busId")String busId,HttpServletRequest request) {
 		Buses b;
+		
 		ModelAndView mv= new ModelAndView();
+		//System.out.println("HELLOOOOOO1");
 		try {
+			//System.out.println("HELLOOOOOOasf1");
 			 b=busesServices.getBusById(busId);
+			 //System.out.println("HELLOOOOOO");
 			if(b!=null) {
-				mv.addObject("listbus",b);
+				mv.addObject("bus",b);
 				mv.setViewName("busDetailsTableViews");
 			}
 		} catch (BuisnessException e) {

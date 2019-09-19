@@ -43,12 +43,12 @@ padding-right:auto;
 <body>
 <div class="header" >header</div>
 <div class="box" >
-<form:form action="fetchdetails" method="POST">
+<form action="fetchdetails" method="POST">
 Enter Bus Id:<br/>
-<form:input  type="text" name="busId"/><br/>
-<form:input type="submit" value="GetBusDetails"/>
+<input  type="text" name="busId"/><br/>
+<input type="submit" value="GetBusDetails"/>
 
-</form:form>
+</form>
 </div>
 <div class="footer"> footer</div>
 </body>
