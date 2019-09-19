@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ page session="false" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -39,11 +43,12 @@ padding-right:auto;
 <body>
 <div class="header" >header</div>
 <div class="box" >
-<form class="form">
+<form:form action="fetchdetails" method="POST">
 Enter Bus Id:<br/>
-<input  type="text" name="budId"><br/>
-<input type="submit" value="GetBusDetails">
-</form>
+<form:input  type="text" name="busId"/><br/>
+<form:input type="submit" value="GetBusDetails"/>
+
+</form:form>
 </div>
 <div class="footer"> footer</div>
 </body>
