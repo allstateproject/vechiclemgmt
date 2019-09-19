@@ -6,10 +6,15 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Entity
-public class Booking {
+public class Booking implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	private String bookingId;
 	private int amountPaid;
