@@ -1,5 +1,6 @@
 package com.allstate.training.vm.entities;
 
+import java.io.Serializable;
 import java.time.Duration;
 
 import javax.persistence.Entity;
@@ -9,7 +10,11 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class RouteDetails {
+public class RouteDetails implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int routeDetailsId;
