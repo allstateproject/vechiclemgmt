@@ -51,7 +51,7 @@ public class BusesServicesImpl implements BusesServices {
 
 	public Buses getBusById(String busId) throws BuisnessException {
 		Buses b=busesDao.getBusById(busId);
-		if(b.getBusId().matches("[A-Z0-9]{2,3}")) {
+		if(b.getBusId().matches("[A-Z0-9]{2,5}")) {
 			return busesDao.getBusById(busId);
 		}
 		else {

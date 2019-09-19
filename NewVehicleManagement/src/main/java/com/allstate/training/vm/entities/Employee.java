@@ -1,16 +1,19 @@
 package com.allstate.training.vm.entities;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
 import javax.persistence.PrimaryKeyJoinColumn;
 
 @Entity
 @PrimaryKeyJoinColumn(name="employeeId")
-public class Employee extends Users {
+public class Employee extends Users implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private long employeePhoneNum;
 	private long employeeAadharNo;
 	private String employeeType;
