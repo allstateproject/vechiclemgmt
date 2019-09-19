@@ -6,17 +6,15 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 
-
+@Repository
 public class BusesDaoImpl implements BusesDao {
+	@Autowired
 	SessionFactory sessionFactory;
-	public BusesDaoImpl () {
-		 Configuration con=new Configuration()
-					.configure()
-					.addAnnotatedClass(Buses.class);
-		  sessionFactory=con.buildSessionFactory();
-	}
+	
 
 	public void addBus(Buses b) {
 		// TODO Auto-generated method stub

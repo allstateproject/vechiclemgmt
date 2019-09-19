@@ -1,6 +1,7 @@
 package com.allstate.training.vm.controllers;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,9 +19,11 @@ public class LoginController {
 	@Autowired
 	UserService userService;
 	
+	
+	
 	@RequestMapping(value="/login",method=RequestMethod.GET)
 	public String getloginPage() {
-		return "login";
+		return "loginpage";
 }
 	
 	@RequestMapping(value="/login",method=RequestMethod.POST)
@@ -30,7 +33,10 @@ public class LoginController {
 		try {
 			user1 = userService.login(user, pass);
 			
+			HttpSession session=request.getSession();
+			session.setAttribute("sname", user1.getUserName());
 			if(user1.getUserType().startsWith("A")) {
+				
 			view= "adminview";	
 			}else if(user1.getUserType().startsWith("P")) {
 				view= "passengerview";	
@@ -46,6 +52,14 @@ public class LoginController {
 		
 		return view;
 		
+	}
+	
+	
+	@RequestMapping(value="/logout")
+	public String logout(HttpSession session) {
+		session.removeAttribute("sname");
+		session.invalidate();
+		return "HomePage";
 	}
 
 }
